@@ -1,15 +1,25 @@
 {
-    "name": "zhosoft/zhosoft-logger",
-    "description": "zhosoft logger",
-    "type": "library",
-    "license": "Apache-2.0",
-    "require": {
-        "php":">=5.6",
-        "zhosoft/zhosoft-logger": "0.1"
-    },
-    "autoload": {
-        "psr-4": {
-            "Logger\\": "src/Logger"
-        }
+  "name": "zhosoft/zhosoft-logger",
+  "description": "zhosoft logger",
+  "type": "library",
+  "keywords": [
+    "logger",
+    "php"
+  ],
+  "authors": [
+    {
+      "name": "zhosoft",
+      "email": "zhosoft@foxmail.com"
     }
+  ],
+  "license": "Apache-2.0",
+  "require": {
+    "php": ">=5.6",
+    "zhosoft/zhosoft-logger": "0.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Logger\\": "src/Logger"
+    }
+  }
 }
