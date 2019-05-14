@@ -5,7 +5,7 @@
     "license": "Apache-2.0",
     "require": {
         "php":">=5.6",
-        "zhosoft/zhosoft-logger": "dev-master"
+        "zhosoft/zhosoft-logger": "0.1"
     },
     "autoload": {
         "psr-4": {
