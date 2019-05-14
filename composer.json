@@ -15,7 +15,7 @@
   "license": "Apache-2.0",
   "require": {
     "php": ">=5.6.0",
-    "zhosoft/zhosoft-logger": "1.0"
+    "zhosoft/zhosoft-logger": "1.1"
   },
   "minimum-stability": "dev",
   "autoload": {
