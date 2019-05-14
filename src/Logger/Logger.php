@@ -16,13 +16,15 @@ class Logger
     /**
      * @param $data 要写入的数据 string|array|object
      * @param $dataTag 要写入数据的描述
-     * @param $appPath 要写入日子日志的路径
+     * @param string $appPath 日志文件路径
      * @param string $fileName 日志文件名称
+     * @param string $postfix 日志文件后缀
      */
-    public function write($data, $dataTag, $appPath, $fileName = '', $postfix = 'txt')
+    public function write($data, $dataTag, $appPath = '', $fileName = '', $postfix = 'txt')
     {
         //定义日志记录的目录
-        $path = $appPath . "log" . DIRECTORY_SEPARATOR . date("Ym") . DIRECTORY_SEPARATOR;
+        $basePath = $_SERVER['DOCUMENT_ROOT'];
+        $path = $basePath . DIRECTORY_SEPARATOR . $appPath . "log" . DIRECTORY_SEPARATOR . date("Ym") . DIRECTORY_SEPARATOR;
         if (!empty($fileName)) {
             $fileName = '-' . $fileName;
         }
