@@ -2,8 +2,7 @@
     "name": "zhosoft/zhosoft-logger",
     "description": "zhosoft logger",
     "type": "library",
-    "license": "MIT",
-    "minimum-stability": "dev",
+    "license": "Apache-2.0",
     "require": {
         "php":">=5.6"
     },
