@@ -6,12 +6,14 @@
  * Date: 2019/5/14 15:00
  */
 
-namespace Logger;
+namespace Zhosoft\Logger;
 
 class Logger
 {
-
-    public $appPath;
+    public $appPath = '';//日志文件路径
+    public $fileName = '';//日志文件名称
+    public $postfix = 'txt';//日志文件后缀
+    const DIR_PERMISSION = '0775';//目录权限
 
     /**
      * @param $data 要写入的数据 string|array|object
@@ -20,7 +22,7 @@ class Logger
      * @param string $fileName 日志文件名称
      * @param string $postfix 日志文件后缀
      */
-    public function write($data, $dataTag, $appPath = '', $fileName = '', $postfix = 'txt')
+    public static function writeStyle($data, $dataTag, $appPath = '', $fileName = '', $postfix = 'txt')
     {
         //定义日志记录的目录
         $basePath = $_SERVER['DOCUMENT_ROOT'];
@@ -30,7 +32,26 @@ class Logger
         }
         $destination = $path . date("d") . $fileName . '-log' . '.' . $postfix;
         $path = dirname($destination);
-        !is_dir($path) && mkdir($path, 0755, true);
-        file_put_contents($destination, date('Y-m-d H:i:s') . PHP_EOL . $dataTag . ":" . PHP_EOL . print_r($data, true) . PHP_EOL, FILE_APPEND);
+        !is_dir($path) && mkdir($path, self::DIR_PERMISSION, true);
+        file_put_contents($destination, '---------------------------------------------------------------\r\n' . date('Y-m-d H:i:s') . PHP_EOL . $dataTag . ":" . PHP_EOL . print_r($data, true) . PHP_EOL, FILE_APPEND);
+    }
+
+    /**
+     * 记录日志,需要实例化后才可以使用
+     * @param $data 要写入的数据 string|array|object
+     * @param $dataTag 要写入数据的描述
+     */
+    public function writeStyle2($data, $dataTag)
+    {
+        //定义日志记录的目录
+        $basePath = $_SERVER['DOCUMENT_ROOT'];
+        $path = $basePath . DIRECTORY_SEPARATOR . $this->appPath . "log" . DIRECTORY_SEPARATOR . date("Ym") . DIRECTORY_SEPARATOR;
+        if (!empty($this->fileName)) {
+            $this->fileName = '-' . $this->fileName;
+        }
+        $destination = $path . date("d") . $this->fileName . '-log' . '.' . $this->postfix;
+        $path = dirname($destination);
+        !is_dir($path) && mkdir($path, self::DIR_PERMISSION, true);
+        file_put_contents($destination, '---------------------------------------------------------------\r\n' . date('Y-m-d H:i:s') . PHP_EOL . $dataTag . ":" . PHP_EOL . print_r($data, true) . PHP_EOL, FILE_APPEND);
     }
 }

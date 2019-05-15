@@ -20,7 +20,7 @@
   "minimum-stability": "dev",
   "autoload": {
     "psr-4": {
-      "Logger\\": "src/Logger"
+      "Zhosoft\\Logger\\": "src/Logger"
     }
   }
 }
