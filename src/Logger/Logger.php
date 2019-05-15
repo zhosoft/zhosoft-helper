@@ -6,7 +6,7 @@
  * Date: 2019/5/14 15:00
  */
 
-namespace Zhosoft\Logger;
+namespace Zhosoft;
 
 class Logger
 {
@@ -33,7 +33,7 @@ class Logger
         $destination = $path . date("d") . $fileName . '-log' . '.' . $postfix;
         $path = dirname($destination);
         !is_dir($path) && mkdir($path, self::DIR_PERMISSION, true);
-        file_put_contents($destination, '---------------------------------------------------------------\r\n' . date('Y-m-d H:i:s') . PHP_EOL . $dataTag . ":" . PHP_EOL . print_r($data, true) . PHP_EOL, FILE_APPEND);
+        file_put_contents($destination, '---------------------------------------------------------------'.PHP_EOL. date('Y-m-d H:i:s') . PHP_EOL . $dataTag . ":" . PHP_EOL . print_r($data, true) . PHP_EOL, FILE_APPEND);
     }
 
     /**
@@ -52,6 +52,6 @@ class Logger
         $destination = $path . date("d") . $this->fileName . '-log' . '.' . $this->postfix;
         $path = dirname($destination);
         !is_dir($path) && mkdir($path, self::DIR_PERMISSION, true);
-        file_put_contents($destination, '---------------------------------------------------------------\r\n' . date('Y-m-d H:i:s') . PHP_EOL . $dataTag . ":" . PHP_EOL . print_r($data, true) . PHP_EOL, FILE_APPEND);
+        file_put_contents($destination, '---------------------------------------------------------------' . PHP_EOL . date('Y-m-d H:i:s') . PHP_EOL . $dataTag . ":" . PHP_EOL . print_r($data, true) . PHP_EOL, FILE_APPEND);
     }
 }
