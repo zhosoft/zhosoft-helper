@@ -3,10 +3,10 @@
 /**
  * Created by PhpStorm.
  * User: by zxm(zhosoft@foxmail.com)
- * Date: 2019/5/14 15:00
+ * CustomDate: 2019/5/14 15:00
  */
 
-namespace Zhosoft;
+namespace zhosoft\log;
 
 class Logger
 {

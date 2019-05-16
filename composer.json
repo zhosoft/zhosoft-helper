@@ -1,9 +1,9 @@
 {
-  "name": "zhosoft/zhosoft-logger",
-  "description": "zhosoft logger",
+  "name": "zhosoft/zhosoft-helper",
+  "description": "zhosoft helper",
   "type": "library",
   "keywords": [
-    "logger",
+    "helper",
     "php"
   ],
   "authors": [
@@ -15,12 +15,12 @@
   "license": "Apache-2.0",
   "require": {
     "php": ">=5.6.0",
-    "zhosoft/zhosoft-logger": "1.*"
+    "zhosoft/zhosoft-helper": "1.*"
   },
   "minimum-stability": "dev",
   "autoload": {
     "psr-4": {
-      "Zhosoft\\": "src/Logger"
+      "zhosoft\\": "src"
     }
   }
 }
